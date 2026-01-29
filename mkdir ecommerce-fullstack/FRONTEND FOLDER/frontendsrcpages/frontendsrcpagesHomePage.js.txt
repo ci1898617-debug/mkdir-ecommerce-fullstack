@@ -1,0 +1,57 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import ProductCard from '../components/ProductCard';
+
+const HomePage = () => {
+  const products = [
+    {
+      _id: '1',
+      name: 'Sample Product 1',
+      price: 99.99,
+      images: ['https://via.placeholder.com/300'],
+      numReviews: 10
+    },
+    {
+      _id: '2',
+      name: 'Sample Product 2',
+      price: 149.99,
+      images: ['https://via.placeholder.com/300'],
+      numReviews: 5
+    },
+    {
+      _id: '3',
+      name: 'Sample Product 3',
+      price: 79.99,
+      images: ['https://via.placeholder.com/300'],
+      numReviews: 8
+    }
+  ];
+
+  return (
+    <div>
+      {/* Hero Section */}
+      <section className="bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl p-8 mb-8">
+        <h1 className="text-4xl font-bold mb-4">Welcome to ShopEase</h1>
+        <p className="text-xl mb-6">Your one-stop shop for everything</p>
+        <Link
+          to="/products"
+          className="bg-white text-blue-600 px-6 py-3 rounded-lg font-bold hover:bg-blue-50"
+        >
+          Shop Now
+        </Link>
+      </section>
+
+      {/* Featured Products */}
+      <section>
+        <h2 className="text-3xl font-bold mb-6">Featured Products</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {products.map(product => (
+            <ProductCard key={product._id} product={product} />
+          ))}
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default HomePage;

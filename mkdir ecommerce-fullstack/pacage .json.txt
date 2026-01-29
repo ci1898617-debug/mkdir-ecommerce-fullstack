@@ -1,0 +1,21 @@
+{
+  name ecommerce-fullstack,
+  version 1.0.0,
+  description Full Stack E-commerce Website,
+  scripts {
+    start concurrently npm run server npm run client,
+    server cd backend && npm start,
+    client cd frontend && npm start,
+    dev concurrently npm run serverdev npm run client,
+    serverdev cd backend && npm run dev,
+    install-all npm install && cd backend && npm install && cd ..frontend && npm install,
+    build cd frontend && npm run build,
+    test cd backend && npm test && cd ..frontend && npm test
+  },
+  devDependencies {
+    concurrently ^8.2.2
+  },
+  keywords [ecommerce, mern, fullstack],
+  author Your Name,
+  license MIT
+}
