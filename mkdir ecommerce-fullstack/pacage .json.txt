@@ -16,6 +16,7 @@
     concurrently ^8.2.2
   },
   keywords [ecommerce, mern, fullstack],
-  author Your Name,
+  author Muhammad ibrahim,
   license MIT
+
 }
